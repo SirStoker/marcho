@@ -3,8 +3,70 @@
 @import 'reset';
 @import 'global';
 
+.header {
+    padding: 40px 0;
 
+    &__inner {
+        display: flex;
+        justify-content: space-between;
+    }
+}
 
+.menu {
+    &__list {
+        text-transform: uppercase;
+        display: flex;
+    }
 
+    &__list-item+.menu__list-item {
+        padding-left: 31px;
+    }
+
+    &__list-link {
+        color: $title;
+        padding: 0 2px 8px;
+        transition: color .3s;
+        @extend %roboto-400;
+
+        &:hover {
+            color: $accent;
+            border-bottom: 2px solid $accent;
+            @extend %roboto-500;
+        }
+    }
+
+    &__list-link--activ {
+        color: $accent;
+        border-bottom: 2px solid $accent;
+        @extend %roboto-500;
+
+    }
+}
+
+.user-nav {
+    display: flex;
+
+    &__link {
+        position: relative;
+    }
+
+    &__link+.user-nav__link {
+        padding-left: 25px;
+    }
+
+    &__num {
+        position: absolute;
+        top: -9px;
+        right: -14px;
+        background-color: $accent;
+        height: 20px;
+        width: 20px;
+        border-radius: 50%;
+        color: #fff;
+        font-size: 12px;
+        text-align: center;
+        line-height: 20px;
+    }
+}
 
 @import 'media';
