@@ -1,6 +1,7 @@
 @import 'vars';
 @import 'fonts';
 @import 'reset';
+@import 'libs';
 @import 'global';
 
 .header {
@@ -31,14 +32,14 @@
         &:hover {
             color: $accent;
             border-bottom: 2px solid $accent;
-            @extend %roboto-500;
+            @extend %roboto-700;
         }
     }
 
     &__list-link--activ {
         color: $accent;
         border-bottom: 2px solid $accent;
-        @extend %roboto-500;
+        @extend %roboto-700;
 
     }
 }
@@ -69,7 +70,92 @@
     }
 }
 
+.top-slider {
+    background-color: $bg;
+    padding: 50px 0 45px;
+    background-image: url(../images/top-slaid-bg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
 
+    &__container {
+        max-width: 1560px;
+    }
+
+    &__item {
+        display: flex !important;
+        justify-content: space-between;
+    }
+
+    &__content {
+        padding: 125px 20px 0 170px;
+        max-width: 760px;
+    }
+
+    &__title {
+        @extend %roboto-700;
+        font-size: 58px;
+        line-height: 68px;
+        color: $title;
+        margin-bottom: 35px;
+    }
+
+    &__txt {
+        max-width: 470px;
+        margin-bottom: 50px;
+    }
+
+    &__link {
+        @extend %btn-accent;
+        padding: 15px 35px;
+
+    }
+
+}
+
+.slick-dots {
+    display: flex;
+    justify-content: center;
+    margin-top: -70px;
+
+    li {
+        padding: 0 15px;
+        line-height: 0;
+
+        button {
+            width: 26px;
+            height: 26px;
+            font-size: 0;
+            padding: 0;
+            background-color: transparent;
+            border-radius: 50%;
+            border: none;
+            border: 1px solid transparent;
+            position: relative;
+
+            &::before {
+                content: "";
+                position: absolute;
+                width: 6px;
+                height: 6px;
+                background-color: $default;
+                border-radius: 50%;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+        }
+
+        &.slick-active {
+            button {
+                border-color: $accent;
+
+                &::before {
+                    background-color: $accent;
+                }
+            }
+        }
+    }
+}
 
 footer {
     background-color: $bg;
@@ -140,12 +226,11 @@ footer {
 
     &__input {
         background-color: #fff;
-        max-width: 320px;
+        max-width: 300px;
         width: 100%;
         height: 55px;
         border: none;
         padding: 12px 10px;
-        // margin-right: 5px;
         box-shadow: 0px 7px 20px 0px rgba(192, 192, 192, 0.3);
 
         &::placeholder {
@@ -155,20 +240,11 @@ footer {
             line-height: 36px;
             color: $default;
         }
-
     }
 
-
     &__btn {
-        background-color: $accent;
+        @extend %btn-accent;
         border: none;
-        @extend %roboto-400;
-        color: #fff;
-        padding: 9px 25px;
-        font-size: 16px;
-        line-height: 36px;
-        text-transform: uppercase;
-        box-shadow: 0px 7px 20px 0px rgba(255, 17, 48, 0.3);
         cursor: pointer;
         margin-left: 10px;
     }
