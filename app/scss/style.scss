@@ -1,6 +1,7 @@
 @import 'vars';
 @import 'fonts';
 @import 'reset';
+@import 'libs';
 @import 'global';
 
 .header {
@@ -31,14 +32,14 @@
         &:hover {
             color: $accent;
             border-bottom: 2px solid $accent;
-            @extend %roboto-500;
+            @extend %roboto-700;
         }
     }
 
     &__list-link--activ {
         color: $accent;
         border-bottom: 2px solid $accent;
-        @extend %roboto-500;
+        @extend %roboto-700;
 
     }
 }
@@ -69,7 +70,240 @@
     }
 }
 
+.top-slider {
+    background-color: $bg;
+    padding: 50px 0 45px;
+    background-image: url(../images/top-slaid-bg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
 
+    &__container {
+        max-width: 1560px;
+    }
+
+    &__item {
+        display: flex !important;
+        justify-content: space-between;
+    }
+
+    &__content {
+        padding: 125px 20px 0 170px;
+        max-width: 760px;
+    }
+
+    &__title {
+        @extend %roboto-700;
+        font-size: 58px;
+        line-height: 68px;
+        color: $title;
+        margin-bottom: 35px;
+    }
+
+    &__txt {
+        max-width: 470px;
+        margin-bottom: 50px;
+    }
+
+    &__link {
+        @extend %btn-accent;
+        padding: 15px 35px;
+
+    }
+
+}
+
+.slick-dots {
+    display: flex;
+    justify-content: center;
+    margin-top: -70px;
+
+    li {
+        padding: 0 15px;
+        line-height: 0;
+
+        button {
+            width: 26px;
+            height: 26px;
+            font-size: 0;
+            padding: 0;
+            background-color: transparent;
+            border-radius: 50%;
+            border: none;
+            border: 1px solid transparent;
+            position: relative;
+
+            &::before {
+                content: "";
+                position: absolute;
+                width: 6px;
+                height: 6px;
+                background-color: $default;
+                border-radius: 50%;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+        }
+
+        &.slick-active {
+            button {
+                border-color: $accent;
+
+                &::before {
+                    background-color: $accent;
+                }
+            }
+        }
+    }
+}
+
+.category {
+    padding: 120px 0;
+    background-image: url('../images/cat_gb_l.png');
+    background-repeat: no-repeat;
+    background-position: center left;
+
+    &__inner {
+        background-image: url('../images/cat_gb_r.png');
+        background-repeat: no-repeat;
+        background-position: center right;
+    }
+}
+
+.category-top {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 120px;
+    position: relative;
+
+    &::before,
+    &::after {
+        content: "";
+        position: absolute;
+    }
+
+    &::before {
+        background-image: url(../images/decor_shape.png);
+        width: 120px;
+        height: 121px;
+        top: -40px;
+        left: -45px;
+    }
+
+    &::after {
+        background-image: url(../images/decor_shape2.png);
+        width: 65px;
+        height: 52px;
+        bottom: 98px;
+        right: -21px;
+    }
+
+    &__item {
+        width: 370px;
+        z-index: 1;
+        background-color: #fff;
+        padding: 60px 40px;
+        box-shadow: 20px 0px 60px 0px rgba(202, 202, 202, 0.35);
+    }
+
+    &__title {
+        @extend %roboto-400;
+        font-size: 22px;
+        line-height: 26px;
+        color: $title;
+        padding: 40px 0 20px;
+    }
+}
+
+.category-main {
+    &__box {
+        display: grid;
+        min-height: 635px;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        grid-gap: 30px;
+
+    }
+
+    &__item {
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+        padding-top: 35px;
+        padding-left: 40px;
+
+        &:nth-child(1) {
+            grid-row: span 2;
+
+            .category-main__subtitle,
+            .category-main__link:hover {
+                color: #5800e4;
+            }
+
+            .category-main__link:hover {
+                padding-bottom: 4px;
+                border-bottom: 1px solid #5800e4;
+            }
+        }
+
+        &:nth-child(2) {
+            grid-column: span 2;
+
+            .category-main__subtitle,
+            .category-main__link:hover {
+                color: $accent;
+            }
+
+            .category-main__link:hover {
+                padding-bottom: 4px;
+                border-bottom: 1px solid $accent;
+            }
+        }
+
+        &:nth-child(3) {
+
+            .category-main__subtitle,
+            .category-main__link:hover {
+                color: #ffb534;
+            }
+
+            .category-main__link:hover {
+                padding-bottom: 4px;
+                border-bottom: 1px solid #ffb534;
+            }
+        }
+
+        &:nth-child(4) {
+
+            .category-main__subtitle,
+            .category-main__link:hover {
+                color: #34c3ff;
+            }
+
+            .category-main__link:hover {
+                padding-bottom: 4px;
+                border-bottom: 1px solid #34c3ff;
+            }
+        }
+    }
+
+    &__subtitle {
+        margin-bottom: 5px;
+    }
+
+    &__title {
+        font-size: 22px;
+        color: $title;
+        margin-bottom: 16px;
+    }
+
+    &__link {
+        text-transform: uppercase;
+        @extend %roboto-400;
+        transition: color .3s;
+
+    }
+}
 
 footer {
     background-color: $bg;
@@ -140,12 +374,11 @@ footer {
 
     &__input {
         background-color: #fff;
-        max-width: 320px;
+        max-width: 300px;
         width: 100%;
         height: 55px;
         border: none;
         padding: 12px 10px;
-        // margin-right: 5px;
         box-shadow: 0px 7px 20px 0px rgba(192, 192, 192, 0.3);
 
         &::placeholder {
@@ -155,20 +388,11 @@ footer {
             line-height: 36px;
             color: $default;
         }
-
     }
 
-
     &__btn {
-        background-color: $accent;
+        @extend %btn-accent;
         border: none;
-        @extend %roboto-400;
-        color: #fff;
-        padding: 9px 25px;
-        font-size: 16px;
-        line-height: 36px;
-        text-transform: uppercase;
-        box-shadow: 0px 7px 20px 0px rgba(255, 17, 48, 0.3);
         cursor: pointer;
         margin-left: 10px;
     }
