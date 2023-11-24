@@ -40,6 +40,14 @@ a {
     text-transform: uppercase;
 }
 
+.subtitle {
+    color: $accent;
+    @extend %quicksand-500;
+    font-size: 22px;
+    line-height: 26px;
+    text-transform: uppercase;
+}
+
 .title-txt {
     text-align: center;
     max-width: 570px;
