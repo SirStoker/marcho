@@ -348,7 +348,7 @@
     }
 
     &__txt {
-        margin-bottom: 55px;
+        margin-bottom: 50px;
     }
 
     &__link {
@@ -356,6 +356,145 @@
     }
 
 }
+
+.product {
+    padding: 120px 0;
+    text-align: center;
+
+    &__text {
+        margin: 0 auto 55px;
+        width: 570px;
+    }
+
+    &__link {
+        text-transform: uppercase;
+        padding: 15px 30px;
+        text-align: center;
+        border: 1px solid $accent;
+        display: inline-block;
+        margin: 55px auto;
+    }
+
+    &__items {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 45px 30px;
+    }
+}
+
+.product-item {
+    max-width: 370px;
+    @extend %roboto-400;
+
+    &__img-box {
+        position: relative;
+        height: 370px;
+        overflow: hidden;
+        margin-bottom: 25px;
+    }
+
+    &__link-box {
+        position: absolute;
+        background-color: #fff;
+        bottom: 50px;
+        left: 0;
+        right: 0;
+        width: 215px;
+        height: 50px;
+        margin: 0 auto;
+        border-radius: 25px;
+        box-shadow: 0px 5px 30px 0px rgba(152, 152, 152, 0.2);
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        transform: translateY(200%);
+        transition: all .5s;
+    }
+
+    &:hover {
+        .product-item__link-box {
+            transform: translateY(0);
+        }
+    }
+
+    &__link--lines::before,
+    &__link--lines::after {
+        content: "";
+        position: absolute;
+        height: 30px;
+        width: 1px;
+        background-color: #ececec;
+        top: -4px;
+    }
+
+    &__link--lines::before {
+        left: -30px;
+    }
+
+    &__link--lines::after {
+        right: -30px;
+    }
+
+    &__img {
+        object-fit: cover;
+    }
+
+    &__link {
+        display: inherit;
+        position: relative;
+
+        path {
+            transition: all .3s;
+        }
+    }
+
+    &__link:hover {
+        path {
+            fill: $accent;
+        }
+    }
+
+    &__title {
+        color: $title;
+        padding: 20px 0;
+        font-size: 22px;
+        line-height: 26px;
+
+    }
+
+    &__price {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    &__new-price {
+        color: $title;
+    }
+
+    &__old-price {
+        text-decoration: line-through;
+    }
+
+    &--sale {
+        .product-item__img-box::before {
+            content: "SALE";
+            position: absolute;
+            top: 25px;
+            left: 25px;
+            @extend %btn-accent;
+            padding: 5px 8px;
+            line-height: 1;
+        }
+    }
+}
+
+.star {
+    margin: 0 auto;
+}
+
+
+
 
 footer {
     background-color: $bg;
