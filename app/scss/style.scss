@@ -215,6 +215,13 @@
 }
 
 .category-main {
+    &__txt {
+        text-align: center;
+        max-width: 570px;
+        margin: 0 auto 55px;
+
+    }
+
     &__box {
         display: grid;
         min-height: 635px;
@@ -549,7 +556,6 @@
             color: $title;
         }
     }
-
 }
 
 .partners {
@@ -561,8 +567,110 @@
         justify-content: space-evenly;
         align-items: center;
     }
-
 }
+
+.blog {
+    padding-bottom: 160px;
+    background-image: url('../images/blog_decor_r2.png');
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-position: 93% 90%;
+
+    &__txt {
+        max-width: 570px;
+        text-align: center;
+        margin: 0 auto 50px;
+    }
+
+    &__box {
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+
+        &::before,
+        &::after {
+            content: "";
+            position: absolute;
+        }
+
+        &::before {
+            background-image: url('../images/blog_decor_l.png');
+            width: 106px;
+            height: 105px;
+            top: 200px;
+            left: -200px;
+        }
+
+        &::after {
+            background-image: url('../images/blog_decor_r1.png');
+            width: 126px;
+            height: 53px;
+            top: -30px;
+            right: -23px;
+            z-index: -1;
+        }
+    }
+
+    &__item {
+        max-width: 370px;
+        height: 480px;
+        height: 100%;
+        border: 1px solid #e8e8e8;
+        transition: all .3s;
+
+        &:hover {
+            box-shadow: 20px 0px 60px 0px rgba(202, 202, 202, 0.35);
+            transform: translate(-3px, -3px);
+            border: none;
+
+            .blog__item-link {
+                color: $accent;
+
+                path {
+                    fill: $accent;
+                }
+            }
+        }
+    }
+
+
+    &__item-descr {
+        padding: 30px 40px;
+    }
+
+    &__info-box {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-bottom: 20px;
+    }
+
+    &__info-box-user {
+        display: inherit;
+        align-items: center;
+        gap: 10px;
+    }
+
+    &__info-box-data {
+        display: inherit;
+        align-items: center;
+        gap: 10px;
+    }
+
+    &__item-title {
+        color: $title;
+        @extend %roboto-400;
+        font-size: 22px;
+        line-height: 32px;
+        padding-bottom: 20px;
+    }
+
+    &__item-link {
+        margin-bottom: 30px;
+        transition: all .3s;
+    }
+}
+
 
 footer {
     background-color: $bg;
