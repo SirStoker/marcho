@@ -44,6 +44,6 @@ $bg: #f6f6f6;
     width: 1px;
     height: 1px;
     overflow: hidden;
-    clip-path: inset(0 0 0 0);
+    clip: rect(0 0 0 0);
     position: absolute;
 }
