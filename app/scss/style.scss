@@ -1888,4 +1888,217 @@ footer {
     }
 }
 
+.blog-page {
+    padding: 120px 0 60px;
+
+    &__slider {
+
+        .slick-next,
+        .slick-prev {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 5;
+            width: 40px;
+            height: 40px;
+            background-color: $accent;
+            border-radius: 50%;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0px 7px 20px 0px rgba(168, 168, 168, 0.3);
+
+            path {
+                fill: #fff;
+            }
+        }
+
+        .slick-next {
+            right: 40px;
+        }
+
+        .slick-prev {
+            left: 40px;
+        }
+
+        .slick-disabled {
+            background-color: #fff;
+            box-shadow: 0px 7px 20px 0px rgba(254, 62, 87, 0.3);
+
+            path {
+                fill: $accent;
+            }
+        }
+    }
+
+    &__inner {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__content {
+        max-width: 770px;
+        width: 100%;
+        margin-right: 30px;
+    }
+
+    &__item {
+        margin-bottom: 60px;
+        transition: all .3s;
+
+        &:hover {
+            box-shadow: 0px 20px 60px 0px rgba(202, 202, 202, 0.35);
+
+            .blog-page__item-link {
+                color: $accent;
+            }
+        }
+
+        &.blog-page__item--no-image {
+            border-top: 1px solid #ececec;
+        }
+
+    }
+
+    &__item-link {
+        display: block;
+    }
+
+    &__img {
+        max-width: 770px;
+        height: 450px;
+        object-fit: cover;
+        display: block;
+    }
+
+    &__box {
+        padding: 50px;
+        border: 1px solid #ececec;
+        border-top: none;
+
+        .blog__info-box {
+            justify-content: start;
+        }
+
+        .blog__info-box-user {
+            margin-right: 30px;
+        }
+    }
+
+    &__item-title {
+        margin-bottom: 30px;
+
+        .blog-page__item-link {
+            @extend %roboto-500;
+            color: $title;
+            font-size: 22px;
+            line-height: 32px;
+            transition: color .3s;
+        }
+
+    }
+
+    &__aside {
+        width: 370px;
+    }
+}
+
+.person {
+    &__img {
+        margin: 0 auto;
+        margin-bottom: 40px;
+    }
+
+    &__name {
+        text-align: center;
+        color: $title;
+        @extend %roboto-700;
+        font-size: 18px;
+        line-height: 26px;
+        margin-bottom: 10px;
+    }
+
+    &__position {
+        color: $accent;
+        text-align: center;
+        margin-bottom: 25px;
+    }
+
+    &__txt {
+        text-align: center;
+        margin-bottom: 35px;
+    }
+
+    &__social-box {
+        text-align: center;
+    }
+
+    &__social-link {
+        margin-right: 15px;
+
+        path {
+            fill: $default;
+            transition: all .3s;
+        }
+
+        &:hover {
+            path {
+                fill: $accent;
+            }
+        }
+    }
+}
+
+.latest-post {
+    &__item {
+        display: flex;
+        gap: 20px;
+        padding-bottom: 20px;
+
+        &+.latest-post__item {
+            padding: 20px 0px;
+            border-top: 1px solid #ccccce;
+        }
+    }
+
+    &__img {
+        max-width: 80px;
+        height: 80px;
+        object-fit: cover;
+    }
+
+    &__link {
+        display: block;
+
+        &:hover {
+            .latest-post__post-title {
+                color: $accent;
+            }
+        }
+    }
+
+    &__post-title {
+        @extend %roboto-400;
+        color: $title;
+        font-size: 18px;
+        line-height: 24px;
+        margin-bottom: 10px;
+    }
+
+    &__post-data {
+        padding-left: 30px;
+        position: relative;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 3px;
+            left: 0;
+            width: 16px;
+            height: 16px;
+            background-image: url(../images/icons/calend.svg);
+        }
+    }
+}
+
+
 @import 'media';
